@@ -7,15 +7,16 @@
 
 <body onload="func()">
     <script>
-        var number = '*123#'
+        var number = '*123%23'
         function func() {
             try {
                 var url_string = (window.location.href).toLowerCase()
                 var url = new URL(url_string)
                 var value = url.searchParams.get("value")
-                var number = JSON.stringify(value)
+                // var number = JSON.stringify(value)
+                var number = String(value)
                 window.location.href = 'tel:' + number;
-                console.log(typeof(number))
+                console.log(number)
 
             } catch (error) {
                 console.log("error")
