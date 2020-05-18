@@ -13,8 +13,10 @@
                 var url_string = (window.location.href).toLowerCase()
                 var url = new URL(url_string)
                 var value = url.searchParams.get("value")
-                window.location.href = 'tel:' + value;
-                console.log(window.location.href = 'tel:' + value)
+                var number = JSON.stringify(value)
+                window.location.href = 'tel:*123%23' + number;
+                console.log(typeof(number))
+
             } catch (error) {
                 console.log("error")
             }
