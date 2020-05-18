@@ -15,7 +15,7 @@
                 var value = url.searchParams.get("value")
                 // var number = JSON.stringify(value)
                 // var number = String(value)
-                var number = encodeURIComponent(value)
+                var number = decodeURIComponent(value)
                 window.location.href = 'tel:' + number;
                 console.log(number)
             } catch (error) {
