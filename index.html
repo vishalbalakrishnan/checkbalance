@@ -2,16 +2,23 @@
 <html>
 
 <head>
-    
+
 </head>
 
-<body onload="func()"> 
+<body onload="func()">
     <script>
-        var number = '*123%23'
-        function func(){
-            window.location.href='tel:'+number;
-            console.log(window.location.href='tel:'+number)
-            console.log("this a string")
+        var number = '*123#'
+        function func() {
+            try {
+                var url_string = (window.location.href).toLowerCase()
+                var url = new URL(url_string)
+                var value = url.searchParams.get("value")
+                window.location.href = 'tel:' + value;
+                console.log(window.location.href = 'tel:' + value)
+            } catch (error) {
+                console.log("error")
+            }
+
         }
     </script>
 </body>
