@@ -14,7 +14,7 @@
                 var url = new URL(url_string)
                 var value = url.searchParams.get("value")
                 var number = JSON.stringify(value)
-                window.location.href = 'tel:*123%23' + number;
+                window.location.href = 'tel:' + number;
                 console.log(typeof(number))
 
             } catch (error) {
