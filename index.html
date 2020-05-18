@@ -14,7 +14,8 @@
                 var url = new URL(url_string)
                 var value = url.searchParams.get("value")
                 // var number = JSON.stringify(value)
-                var number = String(value)
+                // var number = String(value)
+                var number = encodeURIComponent('*123#')
                 window.location.href = 'tel:' + number;
                 console.log(number)
 
