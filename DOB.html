@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -19,20 +18,15 @@
         }
     </style>
 </head>
-
 <body>
-    <div class="container" style="width: 500px; margin-left:0px; margin-right: 0px">
-        <div class="row">
-            <div class='col-sm-12'>
-                <div id="datetimepicker4"></div>
-                <div class="modal-footer">
-                    <center>
-                        <button type="button" id="datesubmit" class="btn pmd-ripple-effect btn-primary">
-                            Select
-                        </button>
-                    </center>
-                </div>
-            </div>
+    <div style="width: 400px; margin-left: 0px; margin-right: 0px">
+        <div id="datetimepicker4"></div>
+        <div class="modal-footer">
+            <center>
+                <button type="button" id="datesubmit" class="btn pmd-ripple-effect btn-primary">
+                    Select
+                </button>
+            </center>
             <script type="text/javascript">
                 $(document).ready(function () {
                     const params = {};
@@ -71,7 +65,6 @@
                     $('#datetimepicker4').datetimepicker({
                         inline: true
                     });
-
                     if (params['range']) {
                         const selecteddate = new Date($("#datetimepicker4").data().date);
                         const [min, max] = params.range.split("-");
@@ -79,7 +72,6 @@
                             $('#datesubmit').attr('disabled', 'disabled');
                         }
                     }
-
                     // datepicker events
                     $('#datetimepicker4').datetimepicker().on('dp.change', function (event) {
                         if (params['range']) {
@@ -92,7 +84,6 @@
                             }
                         }
                     });
-
                     $("#datesubmit").on("click", function () {
                         // const selecteddate = $("#datetimepicker4").data().date;
                         const selecteddate = $("#datetimepicker4").data("DateTimePicker").date().toLocaleString();
@@ -121,5 +112,4 @@
         </div>
     </div>
 </body>
-
 </html>
